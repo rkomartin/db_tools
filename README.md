@@ -1,4 +1,4 @@
-This readme contains some simple tools to help extract data and metadata from relational databases for use in Veritable.
+This repo contains some simple tools to help extract data and metadata from relational databases for use in Veritable.
 
 # Installation
 

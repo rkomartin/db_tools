@@ -6,6 +6,7 @@ import json
 
 @argh.arg('uri', help='<dialect>://[<user>:<password>@]<host>/<db>')
 @argh.arg('table', help='table name')
+@argh.arg('-f', '--file', help='output file name')
 def extract_table(args):
     table_name = args.table
     engine = create_engine(args.uri)
@@ -27,7 +28,11 @@ def extract_table(args):
             schema[c['name']] = {'type': type_string}
         else:
             print c['type'], 'not recognized'
-    print json.dumps(schema, indent=2)
+    if args.file:
+        with open(args.file, 'wb') as fd:
+            fd.write(json.dumps(schema, indent=2))
+    else:
+        print json.dumps(schema, indent=2)
 
 
 def main():
