@@ -12,5 +12,5 @@ This repo contains some simple tools to help extract data and metadata from rela
 
 More complete usage info can be obtained with:
 
-    $ vertiable-db-tools extract-schema -h
+    $ veritable-db-tools extract-schema -h
     
